@@ -1,0 +1,78 @@
+<div class="container text-center">
+  <div class="row ">
+    <div class="col text-xl-left">
+      <img src="./assets/itv.png" height="100px">
+    </div>
+    <div class="col text-xl-right">
+      <img src="./assets/eth.jpg" height="100px">
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-12">
+      <h1>Banco Transferencia - Blockchain</h1>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h3 *ngIf="loadedBalance === true">Cantidad Total ETH: {{balance}}</h3>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-success btn-sm" (click)="updateBalance()">Consultar Saldo</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Depositar">
+          <div class="container my-2">
+            <div class="row text-center">
+              <div class="col">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                <div class="form-group">
+                  <label for="deposit_amount">Ingrese una cantidad</label>
+                  <input type="number"
+                         placeholder="Ej: 10"
+                         class="form-control"
+                         id="deposit_amount" name="quantity"
+                         min="0.01" step="0.01" (change)="depositAmount = $event.target.value">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-dark" (click)="depositar()">Depositar</button>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Retirar">
+          <div class="container my-2">
+            <div class="row my-4">
+              <div class="col">
+                <button type="button" class="btn btn-outline-danger" (click)="retirar()">Retirar</button>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row bg-dark">
+      <p style="color:white;" > <br> Última actualización del sitio web: 10 de diciembre de 2022 <br>
+         </p>
+    </div>
+
+  </div>
+
+</footer>
